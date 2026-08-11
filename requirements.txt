@@ -1,3 +1,10 @@
 python-dotenv
 pandas
 numpy
+pymongo
+certifi
+
+
+##-e .
+##this refers to the setup.py and help to build the project setup and info
+##we can run this at the end of out project
