@@ -69,6 +69,7 @@ async def predict_route(request: Request,file: UploadFile = File(...)):
     try:
         df=pd.read_csv(file.file)
         #print(df)
+        ##write now we are reading hte model from local, but we can also accesss it form the aws s3 bucket
         preprocesor=load_object("final_model/preprocessor.pkl")
         final_model=load_object("final_model/model.pkl")
         network_model = NetworkModel(preprocessor=preprocesor,model=final_model)
