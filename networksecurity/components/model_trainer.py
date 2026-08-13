@@ -35,6 +35,10 @@ class ModelTrainer:
             raise NetworkSecurityException(e,sys)
         
     def track_mlflow(self, best_model, classificationmetric):
+        
+        mlflow.set_tracking_uri("http://127.0.0.1:5000")
+        mlflow.set_experiment("Network_Security_Training")
+        
         with mlflow.start_run():
             f1_score = classificationmetric.f1_score
             precision_score = classificationmetric.precision_score
